@@ -44,13 +44,11 @@ public class SuporteConsultar extends javax.swing.JFrame implements Objeto{
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextFieldIdQuarto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableQuartos = new javax.swing.JTable();
-        jButtonRemoverQuarto = new javax.swing.JButton();
-        jButtonLimparCamposQuarto = new javax.swing.JButton();
+        jTableSuporte = new javax.swing.JTable();
+        jButtonPesquisar = new javax.swing.JButton();
+        jButtonGeraRelatorio = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,14 +75,11 @@ public class SuporteConsultar extends javax.swing.JFrame implements Objeto{
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jLabel2.setText("ID:");
-
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel3.setText("Tipo de suporte:");
 
-        jTableQuartos.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jTableQuartos.setModel(new javax.swing.table.DefaultTableModel(
+        jTableSuporte.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jTableSuporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -95,27 +90,27 @@ public class SuporteConsultar extends javax.swing.JFrame implements Objeto{
         //não deixa as células da tabela editável
         {public boolean isCellEditable(int row, int column){return false;}}
     );
-    jTableQuartos.addMouseListener(new java.awt.event.MouseAdapter() {
+    jTableSuporte.addMouseListener(new java.awt.event.MouseAdapter() {
         public void mouseClicked(java.awt.event.MouseEvent evt) {
-            jTableQuartosMouseClicked(evt);
+            jTableSuporteMouseClicked(evt);
         }
     });
-    jScrollPane1.setViewportView(jTableQuartos);
+    jScrollPane1.setViewportView(jTableSuporte);
 
-    jButtonRemoverQuarto.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-    jButtonRemoverQuarto.setText("Pesquisar");
-    jButtonRemoverQuarto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-    jButtonRemoverQuarto.addActionListener(new java.awt.event.ActionListener() {
+    jButtonPesquisar.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+    jButtonPesquisar.setText("Pesquisar");
+    jButtonPesquisar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButtonRemoverQuartoActionPerformed(evt);
+            jButtonPesquisarActionPerformed(evt);
         }
     });
 
-    jButtonLimparCamposQuarto.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-    jButtonLimparCamposQuarto.setText("Gerar relatório");
-    jButtonLimparCamposQuarto.addActionListener(new java.awt.event.ActionListener() {
+    jButtonGeraRelatorio.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+    jButtonGeraRelatorio.setText("Gerar relatório");
+    jButtonGeraRelatorio.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButtonLimparCamposQuartoActionPerformed(evt);
+            jButtonGeraRelatorioActionPerformed(evt);
         }
     });
 
@@ -130,20 +125,16 @@ public class SuporteConsultar extends javax.swing.JFrame implements Objeto{
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(294, 294, 294))))
+                    .addComponent(jLabel3)
+                    .addGap(294, 294, 294))
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(118, 118, 118)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jTextFieldIdQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jButtonLimparCamposQuarto)
+                            .addComponent(jButtonGeraRelatorio)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButtonRemoverQuarto)))
+                            .addComponent(jButtonPesquisar)))
                     .addGap(79, 79, 79)))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap(16, Short.MAX_VALUE))
@@ -156,17 +147,14 @@ public class SuporteConsultar extends javax.swing.JFrame implements Objeto{
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jTextFieldIdQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGap(24, 24, 24)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel3)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(23, 23, 23)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButtonRemoverQuarto)
-                        .addComponent(jButtonLimparCamposQuarto))))
+                        .addComponent(jButtonPesquisar)
+                        .addComponent(jButtonGeraRelatorio))))
             .addContainerGap(58, Short.MAX_VALUE))
     );
 
@@ -188,25 +176,25 @@ public class SuporteConsultar extends javax.swing.JFrame implements Objeto{
     pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonLimparCamposQuartoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparCamposQuartoActionPerformed
+    private void jButtonGeraRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGeraRelatorioActionPerformed
         //jTextFieldIdQuarto.setText("");
         String tipoSuporte = (String) jComboBox1.getSelectedItem();
         geraRelatorio(tipoSuporte);
-    }//GEN-LAST:event_jButtonLimparCamposQuartoActionPerformed
+    }//GEN-LAST:event_jButtonGeraRelatorioActionPerformed
 
-    private void jButtonRemoverQuartoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoverQuartoActionPerformed
+    private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
         String tipoSuporte = (String) jComboBox1.getSelectedItem();
-        jTableQuartos.setModel(new DefaultTableModel(null, new Object[]{"id", "Cidade", "Pais", "HoraInicio", "HoraEncerra", "TipoSuporte", "Telefone"}));
-        consultaObjeto(jTableQuartos,tipoSuporte);
-    }//GEN-LAST:event_jButtonRemoverQuartoActionPerformed
+        jTableSuporte.setModel(new DefaultTableModel(null, new Object[]{"id", "Cidade", "Pais", "HoraInicio", "HoraEncerra", "TipoSuporte", "Telefone"}));
+        consultaObjeto(jTableSuporte,tipoSuporte);
+    }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
-    private void jTableQuartosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableQuartosMouseClicked
+    private void jTableSuporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableSuporteMouseClicked
 
-        DefaultTableModel model = (DefaultTableModel)jTableQuartos.getModel();
+        DefaultTableModel model = (DefaultTableModel)jTableSuporte.getModel();
 
-        int rIndex = jTableQuartos.getSelectedRow();
-        jTextFieldIdQuarto.setText(model.getValueAt(rIndex, 0).toString());
-    }//GEN-LAST:event_jTableQuartosMouseClicked
+        int rIndex = jTableSuporte.getSelectedRow();
+       
+    }//GEN-LAST:event_jTableSuporteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -256,17 +244,15 @@ public class SuporteConsultar extends javax.swing.JFrame implements Objeto{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonLimparCamposQuarto;
-    private javax.swing.JButton jButtonRemoverQuarto;
+    private javax.swing.JButton jButtonGeraRelatorio;
+    private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableQuartos;
-    private javax.swing.JTextField jTextFieldIdQuarto;
+    private javax.swing.JTable jTableSuporte;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -313,7 +299,7 @@ public class SuporteConsultar extends javax.swing.JFrame implements Objeto{
             }
                     
         } catch (SQLException ex) {
-            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SuporteConsultar.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -470,7 +456,7 @@ public class SuporteConsultar extends javax.swing.JFrame implements Objeto{
         }
                     
         } catch (SQLException ex) {
-            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SuporteConsultar.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

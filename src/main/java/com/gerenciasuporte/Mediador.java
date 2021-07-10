@@ -1,31 +1,18 @@
 package com.gerenciasuporte;
 
-import java.awt.Button;
+import javax.swing.JButton;
 
 /**
  *
  * @author Natalia
  */
 public class Mediador {
-    private Button button;
-    private Fan fan;
-    private PowerSupplier powerSupplier;
+    private JButton botaoConsultar;
 
-    // constructor, getters and setters
-
-    public void press() {
-        if (fan.isOn()) {
-            fan.turnOff();
-        } else {
-            fan.turnOn();
-        }
-    }
-
-    public void start() {
-        powerSupplier.turnOn();
-    }
-
-    public void stop() {
-        powerSupplier.turnOff();
+    public void pesquisar() {
+        botaoConsultar.setEnabled(false);
+        botaoConsultar.setFont(new java.awt.Font("Calibri", 0, 12));
+        botaoConsultar.setText("Pesquisar");
+        botaoConsultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     }
 }

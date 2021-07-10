@@ -27,48 +27,38 @@ public class MainForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenuQuartos = new javax.swing.JMenu();
-        jMenuItemClientes = new javax.swing.JMenuItem();
+        jMenu = new javax.swing.JMenu();
+        jMenuItem = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItemQuartos = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenuItemReservas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenuQuartos.setText("Menu");
-        jMenuQuartos.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jMenu.setText("Menu");
+        jMenu.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
-        jMenuItemClientes.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jMenuItemClientes.setText("Obter suporte");
-        jMenuItemClientes.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jMenuItem.setText("Obter suporte");
+        jMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemClientesActionPerformed(evt);
+                jMenuItemActionPerformed(evt);
             }
         });
-        jMenuQuartos.add(jMenuItemClientes);
-        jMenuQuartos.add(jSeparator1);
+        jMenu.add(jMenuItem);
+        jMenu.add(jSeparator1);
 
-        jMenuItemQuartos.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jMenuItemQuartos.setText("Consultar suporte");
-        jMenuItemQuartos.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jMenuItem2.setText("Consultar suporte");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemQuartosActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenuQuartos.add(jMenuItemQuartos);
-        jMenuQuartos.add(jSeparator2);
+        jMenu.add(jMenuItem2);
+        jMenu.add(jSeparator2);
 
-        jMenuItemReservas.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jMenuItemReservas.setText("Reservas");
-        jMenuItemReservas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemReservasActionPerformed(evt);
-            }
-        });
-        jMenuQuartos.add(jMenuItemReservas);
-
-        jMenuBar1.add(jMenuQuartos);
+        jMenuBar1.add(jMenu);
 
         setJMenuBar(jMenuBar1);
 
@@ -86,29 +76,21 @@ public class MainForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClientesActionPerformed
-        SuporteObter formClientes = new SuporteObter();
+    private void jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemActionPerformed
+        /* formClientes = new SuporteObter();
         formClientes.setVisible(true);
         formClientes.pack();
         formClientes.setLocationRelativeTo(null);
-        formClientes.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    }//GEN-LAST:event_jMenuItemClientesActionPerformed
+        formClientes.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);*/
+    }//GEN-LAST:event_jMenuItemActionPerformed
 
-    private void jMenuItemReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemReservasActionPerformed
-        GerenciarReservas formReservas = new GerenciarReservas();
-        formReservas.setVisible(true);
-        formReservas.pack();
-        formReservas.setLocationRelativeTo(null);
-        formReservas.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    }//GEN-LAST:event_jMenuItemReservasActionPerformed
-
-    private void jMenuItemQuartosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemQuartosActionPerformed
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         SuporteConsultar formQuartos = new SuporteConsultar();
         formQuartos.setVisible(true);
         formQuartos.pack();
         formQuartos.setLocationRelativeTo(null);
         formQuartos.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    }//GEN-LAST:event_jMenuItemQuartosActionPerformed
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,11 +128,10 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItemClientes;
-    private javax.swing.JMenuItem jMenuItemQuartos;
-    private javax.swing.JMenuItem jMenuItemReservas;
-    private javax.swing.JMenu jMenuQuartos;
+    private javax.swing.JMenuItem jMenuItem;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     // End of variables declaration//GEN-END:variables
