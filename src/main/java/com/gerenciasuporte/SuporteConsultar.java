@@ -26,7 +26,7 @@ import org.apache.poi.hssf.util.HSSFColor;
  */
 public class SuporteConsultar extends javax.swing.JFrame implements Objeto{
 
-    My_Connection mycon = new My_Connection();
+    ConexaoMySQL mycon = new ConexaoMySQL();
     
     public SuporteConsultar() {
         initComponents();

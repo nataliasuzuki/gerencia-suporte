@@ -167,7 +167,7 @@ public class LoginForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Informe sua senha para login", "Senha vazia", 2);
         }
         else{
-            My_Connection mycon = new My_Connection();
+            ConexaoMySQL mycon = new ConexaoMySQL();
             String selectQuery = "SELECT * FROM `usuarios` WHERE `usuario`= ? AND `senha`= ?";
             try{
                 ps = mycon.criarConexao().prepareStatement(selectQuery);
@@ -191,7 +191,7 @@ public class LoginForm extends javax.swing.JFrame {
             }
             catch(SQLException ex)
             {
-                Logger.getLogger(My_Connection.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexaoMySQL.class.getName()).log(Level.SEVERE, null, ex);
             }
            
             
