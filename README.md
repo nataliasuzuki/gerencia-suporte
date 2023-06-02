@@ -11,3 +11,11 @@ Suporte App é um simples projeto que disponibiliza consulta de dados e geraçã
 - Plugin WindowBuilder
 - Linguagem Java
 - Banco de dados MySQL
+
+### Executar Suporte App localmente
+- Fazer o download deste projeto em algum diretório local,
+- Abrir algum terminal de comando da sua máquina (Prompt de Comando, Windows PowerShell),
+- Executar o comando ```mvn clean package```,
+- Executar o comando ```cd target```,
+- Executar o comando ```java -jar GerenciaHotel-1.0-SNAPSHOT-jar-with-dependencies.jar```,
+- Após isso, será apresentada a interface do projeto
