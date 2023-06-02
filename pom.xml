@@ -25,19 +25,18 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <name>GerenciaSuporte</name>
-    
     <build>
-    <plugins>
-		<plugin>
-			<artifactId>maven-assembly-plugin</artifactId>
-			<executions>
-				<execution>
-					<phase>package</phase>
-					<goals>
-						<goal>single</goal>
-					</goals>
-				</execution>
-			</executions>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
@@ -51,7 +50,6 @@
 					</archive>
 				</configuration>
 			</plugin>
-	    </plugins>
-	  </build>
-    
+		</plugins>
+	</build>
 </project>
