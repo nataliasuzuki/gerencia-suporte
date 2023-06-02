@@ -17,5 +17,5 @@ Suporte App é um simples projeto que disponibiliza consulta de dados e geraçã
 - Abrir algum terminal de comando da sua máquina (Prompt de Comando, Windows PowerShell),
 - Executar o comando ```mvn clean package```,
 - Executar o comando ```cd target```,
-- Executar o comando ```java -jar GerenciaHotel-1.0-SNAPSHOT-jar-with-dependencies.jar```,
+- Executar o comando ```java -jar suporteApp-1.0-SNAPSHOT-jar-with-dependencies.jar```,
 - Após isso, será apresentada a interface do projeto
