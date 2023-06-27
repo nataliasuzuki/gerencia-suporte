@@ -35,16 +35,16 @@ public class ConsultarSuporteForm extends javax.swing.JFrame {
     ConexaoMySQL conexao = new ConexaoMySQL();
     
     public ConsultarSuporteForm() {
-        initComponents();
+        iniciarComponentes();
     }
 
-    private void initComponents() {
+    private void iniciarComponentes() {
         painelConsultarSuporte2 = new javax.swing.JPanel();
         painelConsultarSuporte = new javax.swing.JPanel();
         labelConsultarSuporte = new javax.swing.JLabel();
         labelTipoSuporte = new javax.swing.JLabel();
         painelDadosSuporte = new javax.swing.JScrollPane();
-        jTableSuporte = new javax.swing.JTable();
+        tabelaDadosSuporte = new javax.swing.JTable();
         botaoPesquisar = new javax.swing.JButton();
         botaoGerarRelatorio = new javax.swing.JButton();
         comboBoxTipoSuporte = new javax.swing.JComboBox<>();
@@ -52,12 +52,12 @@ public class ConsultarSuporteForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         painelConsultarSuporte2.setBackground(new Color(192, 192, 192));
-
         labelConsultarSuporte.setFont(new java.awt.Font("Calibri", 0, 14));
         labelConsultarSuporte.setText("Consultar Suporte");
 
         javax.swing.GroupLayout gl_painelConsultarSuporte = new javax.swing.GroupLayout(painelConsultarSuporte);
         painelConsultarSuporte.setLayout(gl_painelConsultarSuporte);
+        
         gl_painelConsultarSuporte.setHorizontalGroup(
             gl_painelConsultarSuporte.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gl_painelConsultarSuporte.createSequentialGroup()
@@ -65,6 +65,7 @@ public class ConsultarSuporteForm extends javax.swing.JFrame {
                 .addComponent(labelConsultarSuporte)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        
         gl_painelConsultarSuporte.setVerticalGroup(
             gl_painelConsultarSuporte.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gl_painelConsultarSuporte.createSequentialGroup()
@@ -76,115 +77,103 @@ public class ConsultarSuporteForm extends javax.swing.JFrame {
         labelTipoSuporte.setFont(new java.awt.Font("Calibri", 0, 14));
         labelTipoSuporte.setText("Tipo de suporte:");
 
-        jTableSuporte.setFont(new java.awt.Font("Calibri", 0, 12));
-        jTableSuporte.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        tabelaDadosSuporte.setFont(new java.awt.Font("Calibri", 0, 12));
+        tabelaDadosSuporte.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {},
+            new String [] {"id", "Cidade", "País", "Hora Inicial", "Hora Final", "Tipo de Suporte", "Telefone"})
 
-            },
-            new String [] {
-                "id", "Cidade", "País", "Hora Inicial", "Hora Final", "Tipo de Suporte", "Telefone"
-            }
-        )
-
-        {public boolean isCellEditable(int row, int column){return false;}}
-    );
-    jTableSuporte.addMouseListener(new java.awt.event.MouseAdapter() {
-        public void mouseClicked(java.awt.event.MouseEvent evt) {
-            jTableSuporteMouseClicked(evt);
-        }
-    });
-    painelDadosSuporte.setViewportView(jTableSuporte);
-
-    botaoPesquisar.setFont(new java.awt.Font("Calibri", 0, 12));
-    botaoPesquisar.setText("Pesquisar");
-    botaoPesquisar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-    botaoPesquisar.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButtonPesquisarActionPerformed(evt);
-        }
-    });
-
-    botaoGerarRelatorio.setFont(new java.awt.Font("Calibri", 0, 12));
-    botaoGerarRelatorio.setText("Gerar relatório");
-    botaoGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButtonGeraRelatorioActionPerformed(evt);
-        }
-    });
-
-    comboBoxTipoSuporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Selecione uma opção>", "Hardware", "Rede", "Banco de dados/aplicação" }));
-
-    javax.swing.GroupLayout gl_painelConsultarSuporte2 = new javax.swing.GroupLayout(painelConsultarSuporte2);
-    gl_painelConsultarSuporte2.setHorizontalGroup(
-    	gl_painelConsultarSuporte2.createParallelGroup(Alignment.LEADING)
-    		.addComponent(painelConsultarSuporte, GroupLayout.DEFAULT_SIZE, 889, Short.MAX_VALUE)
-    		.addGroup(gl_painelConsultarSuporte2.createSequentialGroup()
-    			.addGroup(gl_painelConsultarSuporte2.createParallelGroup(Alignment.LEADING)
-    				.addGroup(gl_painelConsultarSuporte2.createSequentialGroup()
-    					.addGap(118)
-    					.addGroup(gl_painelConsultarSuporte2.createParallelGroup(Alignment.TRAILING, false)
-    						.addComponent(comboBoxTipoSuporte, GroupLayout.PREFERRED_SIZE, 224, GroupLayout.PREFERRED_SIZE)
-    						.addGroup(Alignment.LEADING, gl_painelConsultarSuporte2.createSequentialGroup()
-    							.addComponent(botaoGerarRelatorio)
-    							.addPreferredGap(ComponentPlacement.UNRELATED)
-    							.addComponent(botaoPesquisar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-    				.addGroup(gl_painelConsultarSuporte2.createSequentialGroup()
-    					.addGap(22)
-    					.addGroup(gl_painelConsultarSuporte2.createParallelGroup(Alignment.LEADING)
-    						.addComponent(painelDadosSuporte, GroupLayout.PREFERRED_SIZE, 848, GroupLayout.PREFERRED_SIZE)
-    						.addComponent(labelTipoSuporte))))
-    			.addContainerGap(19, Short.MAX_VALUE))
-    );
-    gl_painelConsultarSuporte2.setVerticalGroup(
-    	gl_painelConsultarSuporte2.createParallelGroup(Alignment.LEADING)
-    		.addGroup(gl_painelConsultarSuporte2.createSequentialGroup()
-    			.addComponent(painelConsultarSuporte, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-    			.addGap(35)
-    			.addGroup(gl_painelConsultarSuporte2.createParallelGroup(Alignment.LEADING)
-    				.addComponent(labelTipoSuporte)
-    				.addComponent(comboBoxTipoSuporte, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-    			.addGap(23)
-    			.addGroup(gl_painelConsultarSuporte2.createParallelGroup(Alignment.BASELINE)
-    				.addComponent(botaoPesquisar)
-    				.addComponent(botaoGerarRelatorio))
-    			.addGap(18)
-    			.addComponent(painelDadosSuporte, GroupLayout.PREFERRED_SIZE, 275, GroupLayout.PREFERRED_SIZE)
-    			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-    );
-    painelConsultarSuporte2.setLayout(gl_painelConsultarSuporte2);
-
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-    getContentPane().setLayout(layout);
-    layout.setHorizontalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(layout.createSequentialGroup()
-            .addComponent(painelConsultarSuporte2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addContainerGap())
-    );
-    layout.setVerticalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(layout.createSequentialGroup()
-            .addComponent(painelConsultarSuporte2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, Short.MAX_VALUE))
-    );
-
-    pack();
+        	{public boolean isCellEditable(int row, int column){return false;}}
+        );
+        
+	    painelDadosSuporte.setViewportView(tabelaDadosSuporte);
+	    botaoPesquisar.setFont(new java.awt.Font("Calibri", 0, 12));
+	    botaoPesquisar.setText("Pesquisar");
+	    botaoPesquisar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+	    botaoPesquisar.addActionListener(new java.awt.event.ActionListener() {
+	        public void actionPerformed(java.awt.event.ActionEvent evt) {
+	            eventoPesquisar(evt);
+	        }
+	    });
+	
+	    botaoGerarRelatorio.setFont(new java.awt.Font("Calibri", 0, 12));
+	    botaoGerarRelatorio.setText("Gerar relatório");
+	    botaoGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+	        public void actionPerformed(java.awt.event.ActionEvent evt) {
+	            eventoGerarRelatorio(evt);
+	        }
+	    });
+	
+	    comboBoxTipoSuporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Selecione uma opção>", "Hardware", "Rede", "Banco de dados/aplicação" }));
+	    javax.swing.GroupLayout gl_painelConsultarSuporte2 = new javax.swing.GroupLayout(painelConsultarSuporte2);
+	    
+	    gl_painelConsultarSuporte2.setHorizontalGroup(
+	    	gl_painelConsultarSuporte2.createParallelGroup(Alignment.LEADING)
+	    		.addComponent(painelConsultarSuporte, GroupLayout.DEFAULT_SIZE, 889, Short.MAX_VALUE)
+	    		.addGroup(gl_painelConsultarSuporte2.createSequentialGroup()
+	    			.addGroup(gl_painelConsultarSuporte2.createParallelGroup(Alignment.LEADING)
+	    				.addGroup(gl_painelConsultarSuporte2.createSequentialGroup()
+	    					.addGap(118)
+	    					.addGroup(gl_painelConsultarSuporte2.createParallelGroup(Alignment.TRAILING, false)
+	    						.addComponent(comboBoxTipoSuporte, GroupLayout.PREFERRED_SIZE, 224, GroupLayout.PREFERRED_SIZE)
+	    						.addGroup(Alignment.LEADING, gl_painelConsultarSuporte2.createSequentialGroup()
+	    							.addComponent(botaoGerarRelatorio)
+	    							.addPreferredGap(ComponentPlacement.UNRELATED)
+	    							.addComponent(botaoPesquisar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+	    				.addGroup(gl_painelConsultarSuporte2.createSequentialGroup()
+	    					.addGap(22)
+	    					.addGroup(gl_painelConsultarSuporte2.createParallelGroup(Alignment.LEADING)
+	    						.addComponent(painelDadosSuporte, GroupLayout.PREFERRED_SIZE, 848, GroupLayout.PREFERRED_SIZE)
+	    						.addComponent(labelTipoSuporte))))
+	    			.addContainerGap(19, Short.MAX_VALUE))
+	    );
+	    
+	    gl_painelConsultarSuporte2.setVerticalGroup(
+	    	gl_painelConsultarSuporte2.createParallelGroup(Alignment.LEADING)
+	    		.addGroup(gl_painelConsultarSuporte2.createSequentialGroup()
+	    			.addComponent(painelConsultarSuporte, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+	    			.addGap(35)
+	    			.addGroup(gl_painelConsultarSuporte2.createParallelGroup(Alignment.LEADING)
+	    				.addComponent(labelTipoSuporte)
+	    				.addComponent(comboBoxTipoSuporte, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+	    			.addGap(23)
+	    			.addGroup(gl_painelConsultarSuporte2.createParallelGroup(Alignment.BASELINE)
+	    				.addComponent(botaoPesquisar)
+	    				.addComponent(botaoGerarRelatorio))
+	    			.addGap(18)
+	    			.addComponent(painelDadosSuporte, GroupLayout.PREFERRED_SIZE, 275, GroupLayout.PREFERRED_SIZE)
+	    			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+	    );
+	    
+	    painelConsultarSuporte2.setLayout(gl_painelConsultarSuporte2);
+	    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+	    getContentPane().setLayout(layout);
+	    
+	    layout.setHorizontalGroup(
+	        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	        .addGroup(layout.createSequentialGroup()
+	            .addComponent(painelConsultarSuporte2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	            .addContainerGap())
+	    );
+	    
+	    layout.setVerticalGroup(
+	        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	        .addGroup(layout.createSequentialGroup()
+	            .addComponent(painelConsultarSuporte2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	            .addGap(0, 0, Short.MAX_VALUE))
+	    );
+	
+	    pack();
     }
 
-    private void jButtonGeraRelatorioActionPerformed(java.awt.event.ActionEvent evt) {
+    private void eventoGerarRelatorio(java.awt.event.ActionEvent evt) {
         String tipoSuporte = (String) comboBoxTipoSuporte.getSelectedItem();
-        geraRelatorio(tipoSuporte);
+        gerarRelatorio(tipoSuporte);
     }
 
-    private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {
+    private void eventoPesquisar(java.awt.event.ActionEvent evt) {
         String tipoSuporte = (String) comboBoxTipoSuporte.getSelectedItem();
-        jTableSuporte.setModel(new DefaultTableModel(null, new Object[]{"id", "Cidade", "País", "Hora Inicial", "Hora Final", "Tipo de Suporte", "Telefone"}));
-        consultaObjeto(jTableSuporte,tipoSuporte);
-    }
-
-    private void jTableSuporteMouseClicked(java.awt.event.MouseEvent evt) {
-        DefaultTableModel model = (DefaultTableModel)jTableSuporte.getModel();
-        int rIndex = jTableSuporte.getSelectedRow();
+        tabelaDadosSuporte.setModel(new DefaultTableModel(null, new Object[]{"id", "Cidade", "País", "Hora Inicial", "Hora Final", "Tipo de Suporte", "Telefone"}));
+        buscarDadosSuporte(tabelaDadosSuporte,tipoSuporte);
     }
 
     public static void main(String args[]) {
@@ -220,9 +209,9 @@ public class ConsultarSuporteForm extends javax.swing.JFrame {
     private javax.swing.JPanel painelConsultarSuporte2;
     private javax.swing.JPanel painelConsultarSuporte;
     private javax.swing.JScrollPane painelDadosSuporte;
-    private javax.swing.JTable jTableSuporte;
+    private javax.swing.JTable tabelaDadosSuporte;
 
-    public void consultaObjeto(JTable tabelaSuporte, String tipoSuporte) {
+    public void buscarDadosSuporte(JTable tabelaSuporte, String tipoSuporte) {
         PreparedStatement ps;
         ResultSet rs;
         
@@ -259,7 +248,7 @@ public class ConsultarSuporteForm extends javax.swing.JFrame {
         }
     }
     
-    public void geraRelatorio(String tipoSuporteSelecionado){
+    public void gerarRelatorio(String tipoSuporteSelecionado){
         PreparedStatement ps;
         ResultSet rs;
         
@@ -333,15 +322,15 @@ public class ConsultarSuporteForm extends javax.swing.JFrame {
                 cell1Title.setCellStyle(sTitle);
 
                 HSSFCell cell2Title = row.createCell(2);
-                cell2Title.setCellValue("Hora de início");
+                cell2Title.setCellValue("Hora Inicial");
                 cell2Title.setCellStyle(sTitle);
 
                 HSSFCell cell3Title = row.createCell(3);
-                cell3Title.setCellValue("Hora de encerramento");
+                cell3Title.setCellValue("Hora Final");
                 cell3Title.setCellStyle(sTitle);
 
                 HSSFCell cell4Title = row.createCell(4);
-                cell4Title.setCellValue("Tipo de suporte");
+                cell4Title.setCellValue("Tipo de Suporte");
                 cell4Title.setCellStyle(sTitle);
 
                 HSSFCell cell5Title = row.createCell(5);
@@ -353,13 +342,13 @@ public class ConsultarSuporteForm extends javax.swing.JFrame {
 
                         Object cidade = rs.getString(2);
                         Object pais = rs.getString(3);			
-                        Object horaInicio = rs.getString(4);
-                        Object horaEncerra = rs.getString(5);
+                        Object horaInicial = rs.getString(4);
+                        Object horaFinal = rs.getString(5);
                         Object tipoSuporte = rs.getString(6);
-                        Object telefone = rs.getInt(7);
+                        Object telefone = rs.getString(7);
 
                         row = abaManual.createRow(i);
-                        popularLinhas(sLinha1, sLinha2, i, row, cidade, pais, horaInicio, horaEncerra, tipoSuporte, telefone);
+                        popularLinhas(sLinha1, sLinha2, i, row, cidade, pais, horaInicial, horaFinal, tipoSuporte, telefone);
                         i++;
                 }
 
@@ -379,70 +368,64 @@ public class ConsultarSuporteForm extends javax.swing.JFrame {
         }
     }
     
-    private void popularLinhas(HSSFCellStyle sLinha1, HSSFCellStyle sLinha2, int i, HSSFRow row, Object cidade, Object pais, Object horaInicio, Object horaEncerra, Object tipoSuporte, Object telefone) {
+    private void popularLinhas(HSSFCellStyle sLinha1, HSSFCellStyle sLinha2, int i, HSSFRow row, Object cidade, Object pais, Object horaInicial, Object horaFinal, Object tipoSuporte, Object telefone) {
 
         HSSFCell cell0 = row.createCell(0);
-        if (cidade != null){
-                cell0.setCellValue(cidade.toString().toUpperCase());
-        }else {
-                cell0.setCellValue("");
+        if(cidade != null){
+        	cell0.setCellValue(cidade.toString());
+        } else {
+        	cell0.setCellValue("");
         }
 
         HSSFCell cell1 = row.createCell(1);
-        if (pais != null){
-                cell1.setCellValue(pais.toString());
-        }else {
-                cell1.setCellValue("");
+        if(pais != null){
+        	cell1.setCellValue(pais.toString());
+        } else {
+        	cell1.setCellValue("");
         }	
 
         HSSFCell cell2 = row.createCell(2);
-        if (horaInicio != null){
-                cell2.setCellValue(horaInicio.toString());
-        }
-        else {
-                cell2.setCellValue("");
+        if(horaInicial != null){
+        	cell2.setCellValue(horaInicial.toString());
+        } else {
+        	cell2.setCellValue("");
         }
 
         HSSFCell cell3 = row.createCell(3);
-        if (horaEncerra != null){
-                cell3.setCellValue(horaEncerra.toString());
-        }
-        else {
-                cell3.setCellValue("");
+        if(horaFinal != null){
+        	cell3.setCellValue(horaFinal.toString());
+        } else {
+        	cell3.setCellValue("");
         }
         
         HSSFCell cell4 = row.createCell(4);
-        if (tipoSuporte != null){
-                cell4.setCellValue(tipoSuporte.toString());
-        }
-        else {
-                cell4.setCellValue("");
+        if(tipoSuporte != null){
+        	cell4.setCellValue(tipoSuporte.toString());
+        } else {
+        	cell4.setCellValue("");
         }
 
         HSSFCell cell5 = row.createCell(5);
-        if (telefone != null){
-                String dataFormatada = telefone.toString();
-                cell5.setCellValue(dataFormatada);
-        }
-        else {
-                cell5.setCellValue("");
+        if(telefone != null){
+        	cell5.setCellValue(telefone.toString());
+        } else {
+        	cell5.setCellValue("");
         }
 
-        if (i % 2 == 0) {
-                cell0.setCellStyle(sLinha1);
-                cell1.setCellStyle(sLinha1);
-                cell2.setCellStyle(sLinha1);
-                cell3.setCellStyle(sLinha1);
-                cell4.setCellStyle(sLinha1);
-                cell5.setCellStyle(sLinha1);
-        }
-        else {
-                cell0.setCellStyle(sLinha2);
-                cell1.setCellStyle(sLinha2);
-                cell2.setCellStyle(sLinha2);
-                cell3.setCellStyle(sLinha2);
-                cell4.setCellStyle(sLinha2);
-                cell5.setCellStyle(sLinha2);
+        if(i % 2 == 0) {
+	        cell0.setCellStyle(sLinha1);
+	        cell1.setCellStyle(sLinha1);
+	        cell2.setCellStyle(sLinha1);
+	        cell3.setCellStyle(sLinha1);
+	        cell4.setCellStyle(sLinha1);
+	        cell5.setCellStyle(sLinha1);
+        } else {
+            cell0.setCellStyle(sLinha2);
+            cell1.setCellStyle(sLinha2);
+            cell2.setCellStyle(sLinha2);
+            cell3.setCellStyle(sLinha2);
+            cell4.setCellStyle(sLinha2);
+            cell5.setCellStyle(sLinha2);
         }
     }
 }

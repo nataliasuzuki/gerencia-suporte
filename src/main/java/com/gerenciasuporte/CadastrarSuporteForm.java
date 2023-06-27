@@ -65,7 +65,7 @@ public class CadastrarSuporteForm extends javax.swing.JFrame {
 	    botaoCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 	    botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
 	        public void actionPerformed(java.awt.event.ActionEvent evt) {
-	            botaoCadastrar(evt);
+	            eventoCadastrar(evt);
 	        }
 	    });
 	
@@ -199,7 +199,7 @@ public class CadastrarSuporteForm extends javax.swing.JFrame {
 	    pack();
     }
 
-    private void botaoCadastrar(java.awt.event.ActionEvent evt) {
+    private void eventoCadastrar(java.awt.event.ActionEvent evt) {
     	String cidade = campoCidade.getText();
     	String pais = campoPais.getText();
     	String horaInicial = campoHoraInicial.getText();

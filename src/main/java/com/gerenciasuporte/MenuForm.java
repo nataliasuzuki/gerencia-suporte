@@ -9,16 +9,16 @@ import javax.swing.JFrame;
 public class MenuForm extends javax.swing.JFrame {
 
     public MenuForm() {
-        initComponents();
+        iniciarComponentes();
     }
 
-    private void initComponents() {
+    private void iniciarComponentes() {
         menuBarra = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         menuObterSuporte = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        separador1 = new javax.swing.JPopupMenu.Separator();
         menuConsultarSuporte = new javax.swing.JMenuItem();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        separador2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -29,32 +29,35 @@ public class MenuForm extends javax.swing.JFrame {
         menuObterSuporte.setText("Cadastrar suporte");
         menuObterSuporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemActionPerformed(evt);
+                eventoCadastrarSuporte(evt);
             }
         });
+        
         menu.add(menuObterSuporte);
-        menu.add(jSeparator1);
+        menu.add(separador1);
 
         menuConsultarSuporte.setFont(new java.awt.Font("Calibri", 0, 14));
         menuConsultarSuporte.setText("Consultar suporte");
         menuConsultarSuporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                eventoConsultarSuporte(evt);
             }
         });
+        
         menu.add(menuConsultarSuporte);
-        menu.add(jSeparator2);
+        menu.add(separador2);
 
         menuBarra.add(menu);
-
         setJMenuBar(menuBarra);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
+        
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 451, Short.MAX_VALUE)
         );
+        
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 381, Short.MAX_VALUE)
@@ -63,7 +66,7 @@ public class MenuForm extends javax.swing.JFrame {
         pack();
     }
 
-    private void jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
+    private void eventoCadastrarSuporte(java.awt.event.ActionEvent evt) {
         CadastrarSuporteForm form = new CadastrarSuporteForm();
         form.setVisible(true);
         form.pack();
@@ -71,7 +74,7 @@ public class MenuForm extends javax.swing.JFrame {
         form.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void eventoConsultarSuporte(java.awt.event.ActionEvent evt) {
         ConsultarSuporteForm form = new ConsultarSuporteForm();
         form.setVisible(true);
         form.pack();
@@ -110,6 +113,6 @@ public class MenuForm extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuBarra;
     private javax.swing.JMenuItem menuObterSuporte;
     private javax.swing.JMenuItem menuConsultarSuporte;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator separador1;
+    private javax.swing.JPopupMenu.Separator separador2;
 }
