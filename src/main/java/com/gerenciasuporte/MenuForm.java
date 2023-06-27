@@ -6,9 +6,9 @@ import javax.swing.JFrame;
  *
  * @author Natalia
  */
-public class MainForm extends javax.swing.JFrame {
+public class MenuForm extends javax.swing.JFrame {
 
-    public MainForm() {
+    public MenuForm() {
         initComponents();
     }
 
@@ -88,20 +88,20 @@ public class MainForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            	MainForm mainForm = new MainForm();
-            	mainForm.setVisible(true);
-            	mainForm.setLocationRelativeTo(null);
+            	MenuForm menuForm = new MenuForm();
+            	menuForm.setVisible(true);
+            	menuForm.setLocationRelativeTo(null);
             }
         });
     }

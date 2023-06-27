@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import java.awt.Color;
 
 /**
  *
@@ -16,12 +17,10 @@ public class LoginForm extends javax.swing.JFrame {
 
     public LoginForm() {
         initComponents();
-        
         this.setLocationRelativeTo(null);
     }
 
     private void initComponents() {
-
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -33,7 +32,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new Color(192, 192, 192));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -62,7 +61,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel2.setText("Usuário:");
 
         jTextFieldUsuario.setFont(new java.awt.Font("Calibri", 0, 18));
-        jTextFieldUsuario.setText("superAdmin");
+        jTextFieldUsuario.setText("guest");
         jTextFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldUsuarioActionPerformed(evt);
@@ -73,7 +72,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Senha:");
 
-        jButtonEntrar.setBackground(new java.awt.Color(0, 204, 51));
+        jButtonEntrar.setBackground(new Color(255, 255, 255));
         jButtonEntrar.setFont(new java.awt.Font("Calibri", 0, 18));
         jButtonEntrar.setText("Entrar");
         jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +82,7 @@ public class LoginForm extends javax.swing.JFrame {
         });
 
         jPasswordFieldSenha.setFont(new java.awt.Font("Calibri", 0, 18));
-        jPasswordFieldSenha.setText("natalia");
+        jPasswordFieldSenha.setText("guest");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -158,7 +157,7 @@ public class LoginForm extends javax.swing.JFrame {
         }
         else{
             ConexaoMySQL mycon = new ConexaoMySQL();
-            String selectQuery = "SELECT * FROM `usuarios` WHERE `usuario`= ? AND `senha`= ?";
+            String selectQuery = "SELECT * FROM `usuarios` WHERE `nome`= ? AND `senha`= ?";
             try{
                 ps = mycon.criarConexao().prepareStatement(selectQuery);
                 ps.setString(1,usuario);
@@ -167,11 +166,11 @@ public class LoginForm extends javax.swing.JFrame {
                 rs = ps.executeQuery();
                 
                 if(rs.next()){
-                    MainForm mainForm = new MainForm();
-                    mainForm.setVisible(true);
-                    mainForm.pack();
-                    mainForm.setLocationRelativeTo(null);
-                    mainForm.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                    MenuForm menuForm = new MenuForm();
+                    menuForm.setVisible(true);
+                    menuForm.pack();
+                    menuForm.setLocationRelativeTo(null);
+                    menuForm.setExtendedState(JFrame.MAXIMIZED_BOTH);
                     
                     this.dispose();
                 }
