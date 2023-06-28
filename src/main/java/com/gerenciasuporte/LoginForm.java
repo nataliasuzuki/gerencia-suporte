@@ -10,6 +10,9 @@ import java.util.logging.Logger;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 /**
  *
@@ -38,39 +41,39 @@ public class LoginForm extends javax.swing.JFrame {
 
         labelFundo.setBackground(new java.awt.Color(204, 204, 204));
 
-        labelTitulo.setFont(new Font("Calibri", Font.BOLD, 19));
+        labelTitulo.setFont(new Font("Arial", Font.BOLD, 18));
         labelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        labelTitulo.setText("LOGIN");
+        labelTitulo.setText("Login");
 
         javax.swing.GroupLayout gl_labelFundo = new javax.swing.GroupLayout(labelFundo);
-        labelFundo.setLayout(gl_labelFundo);
         gl_labelFundo.setHorizontalGroup(
-            gl_labelFundo.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gl_labelFundo.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(labelTitulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	gl_labelFundo.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_labelFundo.createSequentialGroup()
+        			.addGap(228)
+        			.addComponent(labelTitulo, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addGap(307))
         );
         gl_labelFundo.setVerticalGroup(
-            gl_labelFundo.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gl_labelFundo.createSequentialGroup()
-                .addGap(0, 11, Short.MAX_VALUE)
-                .addComponent(labelTitulo))
+        	gl_labelFundo.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(gl_labelFundo.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(labelTitulo, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        labelFundo.setLayout(gl_labelFundo);
 
-        labelUsuario.setFont(new java.awt.Font("Calibri", 0, 18));
+        labelUsuario.setFont(new Font("Arial", Font.BOLD, 16));
         labelUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        labelUsuario.setText("Usuário:");
+        labelUsuario.setText("Usuário");
 
-        campoUsuario.setFont(new java.awt.Font("Calibri", 0, 18));
+        campoUsuario.setFont(new Font("Arial", Font.PLAIN, 16));
         campoUsuario.setText("guest");
 
-        labelSenha.setFont(new java.awt.Font("Calibri", 0, 18));
+        labelSenha.setFont(new Font("Arial", Font.BOLD, 16));
         labelSenha.setForeground(new java.awt.Color(255, 255, 255));
-        labelSenha.setText("Senha:");
+        labelSenha.setText("Senha");
 
         botaoEntrar.setBackground(new Color(255, 255, 255));
-        botaoEntrar.setFont(new java.awt.Font("Calibri", 0, 18));
+        botaoEntrar.setFont(new Font("Arial", Font.PLAIN, 14));
         botaoEntrar.setText("Entrar");
         botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,62 +81,60 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
-        campoSenha.setFont(new java.awt.Font("Calibri", 0, 18));
+        campoSenha.setFont(new Font("Arial", Font.PLAIN, 16));
         campoSenha.setText("guest");
 
         javax.swing.GroupLayout gl_tela = new javax.swing.GroupLayout(tela);
-        tela.setLayout(gl_tela);
-        
         gl_tela.setHorizontalGroup(
-            gl_tela.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(gl_tela.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(gl_tela.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, gl_tela.createSequentialGroup()
-                        .addComponent(labelSenha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(gl_tela.createSequentialGroup()
-                        .addComponent(labelUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(49, 49, 49))
-            .addGroup(gl_tela.createSequentialGroup()
-                .addGap(252, 252, 252)
-                .addComponent(botaoEntrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	gl_tela.createParallelGroup(Alignment.LEADING)
+        		.addComponent(labelFundo, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        		.addGroup(gl_tela.createSequentialGroup()
+        			.addGap(188)
+        			.addComponent(botaoEntrar, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(256, Short.MAX_VALUE))
+        		.addGroup(gl_tela.createSequentialGroup()
+        			.addGap(100)
+        			.addGroup(gl_tela.createParallelGroup(Alignment.LEADING)
+        				.addGroup(gl_tela.createSequentialGroup()
+        					.addComponent(labelSenha)
+        					.addContainerGap())
+        				.addGroup(gl_tela.createParallelGroup(Alignment.LEADING)
+        					.addGroup(gl_tela.createSequentialGroup()
+        						.addComponent(labelUsuario)
+        						.addContainerGap())
+        					.addGroup(gl_tela.createSequentialGroup()
+        						.addGroup(gl_tela.createParallelGroup(Alignment.TRAILING)
+        							.addComponent(campoUsuario, Alignment.LEADING)
+        							.addComponent(campoSenha, GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE))
+        						.addGap(175)))))
         );
-        
         gl_tela.setVerticalGroup(
-            gl_tela.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gl_tela.createSequentialGroup()
-                .addComponent(labelFundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addGroup(gl_tela.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelUsuario)
-                    .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(gl_tela.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelSenha)
-                    .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(botaoEntrar)
-                .addGap(0, 57, Short.MAX_VALUE))
+        	gl_tela.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_tela.createSequentialGroup()
+        			.addComponent(labelFundo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addComponent(labelUsuario)
+        			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addComponent(campoUsuario, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(23)
+        			.addComponent(labelSenha)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(campoSenha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addComponent(botaoEntrar)
+        			.addGap(33))
         );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        tela.setLayout(gl_tela);
+        GroupLayout groupLayout = new GroupLayout(getContentPane());
+        groupLayout.setHorizontalGroup(
+        	groupLayout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(tela, GroupLayout.PREFERRED_SIZE, 517, GroupLayout.PREFERRED_SIZE)
         );
-        
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        groupLayout.setVerticalGroup(
+        	groupLayout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(tela, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         );
+        getContentPane().setLayout(groupLayout);
         
         pack();
     }
