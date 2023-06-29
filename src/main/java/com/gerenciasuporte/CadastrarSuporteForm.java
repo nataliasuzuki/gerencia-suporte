@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -203,23 +204,52 @@ public class CadastrarSuporteForm extends javax.swing.JFrame {
         String tipoSuporte = (String) campoTipoSuporte.getSelectedItem();
         String telefone = campoTelefone.getText();
         
-        PreparedStatement ps;
-        ResultSet rs;
-        String insertQuery = "INSERT INTO `dadossuporte` VALUES(?,?,?,?,?,?,?);";
-        
-        try {
-            ps = conexao.criarConexao().prepareStatement(insertQuery);
-            ps.setInt(1, (int)(Math.random() * 999 + 1));
-            ps.setString(2, cidade);
-            ps.setString(3, pais);
-            ps.setString(4, horaInicial);
-            ps.setString(5, horaFinal);
-            ps.setString(6, tipoSuporte);
-            ps.setString(7, telefone);
-            ps.executeUpdate();
+        if(cidade.trim().equals(""))
+        {
+        	JOptionPane.showMessageDialog(rootPane, "Informe a cidade", "Aviso", 2);
+        } 
+        else if(pais.trim().equals(""))
+        {
+        	JOptionPane.showMessageDialog(rootPane, "Informe o país", "Aviso", 2);
+        } 
+        else if(horaInicial.trim().equals(""))
+        {
+        	JOptionPane.showMessageDialog(rootPane, "Informe a hora inicial", "Aviso", 2);
+        } 
+        else if(horaFinal.trim().equals(""))
+        {
+        	JOptionPane.showMessageDialog(rootPane, "Informe a hora final", "Aviso", 2);
+        } 
+        else if(tipoSuporte.equals("<Selecione uma opção>"))
+        {
+        	JOptionPane.showMessageDialog(rootPane, "Informe o tipo de suporte", "Aviso", 2);
+        }
+        else if(telefone.trim().equals(""))
+        {
+        	JOptionPane.showMessageDialog(rootPane, "Informe o telefone", "Aviso", 2);
+        }
+        else {
+        	PreparedStatement ps;
+            ResultSet rs;
+            String insertQuery = "INSERT INTO `dadossuporte` VALUES(?,?,?,?,?,?,?);";
             
-        } catch (SQLException ex) {
-            Logger.getLogger(CadastrarSuporteForm.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                ps = conexao.criarConexao().prepareStatement(insertQuery);
+                ps.setInt(1, (int)(Math.random() * 999 + 1));
+                ps.setString(2, cidade);
+                ps.setString(3, pais);
+                ps.setString(4, horaInicial);
+                ps.setString(5, horaFinal);
+                ps.setString(6, tipoSuporte);
+                ps.setString(7, telefone);
+                int resultado = ps.executeUpdate();
+                if(resultado == 1) {
+                	JOptionPane.showMessageDialog(rootPane, "Suporte cadastrado com sucesso!", "Sucesso", 1);
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(CadastrarSuporteForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 

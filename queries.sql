@@ -23,10 +23,19 @@ INSERT INTO `gerencia-suporte_db`.`dadossuporte` (
 `TipoSuporte`,
 `Telefone`)
 VALUES (
-'4',
-'Boston',
-'Estados Unidos',
-'08:00',
-'20:00',
+'1',
+'Joinville',
+'Brasil',
+'09:00',
+'18:00',
 'Rede',
-'1234');
+'47 99999-1111');
+
+INSERT INTO `gerencia-suporte_db`.`usuarios` (
+`id`,
+`nome`,
+`senha`)
+VALUES (
+'1',
+'guest',
+'guest');
