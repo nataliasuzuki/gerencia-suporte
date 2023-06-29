@@ -47,7 +47,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib</classpathPrefix>
-							<mainClass>com.gerenciasuporte.MainForm</mainClass>
+							<mainClass>com.gerenciasuporte.LoginForm</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
