@@ -1,8 +1,9 @@
 # :telephone_receiver: Suporte App
 
-Suporte App é um simples projeto que disponibiliza consulta de dados e geração de arquivo.
+Suporte App é um pequeno projeto que disponibiliza cadastro, consulta de dados e geração de arquivo.
 
 ### Funcionalidades do projeto
+- Cadastro de suporte
 - Consulta de suportes disponíveis nas três áreas: hardware, rede, banco de dados/aplicação
 - Geração de relatório na extensão .xls com base na consulta do item anterior
 
